@@ -1,28 +1,42 @@
 // import { useState } from 'react'
-import React from 'react'
+import React, { useEffect } from 'react'
 import './App.css'
 import {createBrowserRouter, RouterProvider} from "react-router-dom"
 import Home from './pages/Home'
 import MainNavBar from './components/MainNavBar'
 import axios from 'axios'
+import AddRecipeForm from './pages/AddRecipeForm'
+import EditRecipeForm from './pages/EditRecipeForm'
 
-const getAllRecipes=async()=>{
-  let allRecipes=[]
-  await axios.get('http://localhost:3000/recipe').then(res=> {
-    allRecipes=res.data
-  })
-  return allRecipes
+const getAllRecipes = async () => {
+  let allRecipes = [];
 
-}
+  try {
+    const res = await axios.get('/recipe');
+    allRecipes = res.data;
+  } catch (error) {
+    console.error('Error fetching recipes:', error);
+  }
 
-const router = createBrowserRouter([
+  return allRecipes;
+};
+
+
+const router = createBrowserRouter([ 
   {path:"/", element:<MainNavBar/>, children:[
-    {path:"/", element:<Home/>, loader: getAllRecipes}
+  {index:true, element: <Home />}, //loader: getAllRecipes
+  {
+    path:"addrecipeform", element: <AddRecipeForm/> // its telling it to show this specific element on pages jsx as per the path
+  },
+  {
+    path:"editrecipeform", element: <EditRecipeForm/>
+  }
   ]}
   
 ])
 
  function App() {
+  useEffect(() => {getAllRecipes()},[])
 
    return (
      <>
@@ -32,29 +46,3 @@ const router = createBrowserRouter([
   }
 
  export default App
-
-   //       <div>
-//         <a href="https://vite.dev" target="_blank">
-//           <img src={viteLogo} className="logo" alt="Vite logo" />
-//         </a>
-//         <a href="https://react.dev" target="_blank">
-//           <img src={reactLogo} className="logo react" alt="React logo" />
-//         </a>
-//       </div>
-//       <h1>Vite + React</h1>
-//       <div className="card">
-//         <button onClick={() => setCount((count) => count + 1)}>
-//           count is {count}
-//         </button>
-//         <p>
-//           Edit <code>src/App.jsx</code> and save to test HMR
-//         </p>
-//       </div>
-//       <p className="read-the-docs">
-//         Click on the Vite and React logos to learn more
-//       </p>
-
-//   )
-// }
-
-

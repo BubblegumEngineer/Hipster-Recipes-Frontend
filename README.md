@@ -24,3 +24,39 @@ https://www.freepik.com/
 
 React Icons: 
 https://react-icons.github.io/react-icons/
+
+### Frontend Summary (React with Axios)
+Technologies:
+
+React for building the user interface.
+
+Axios for making API calls to the backend.
+
+React Router for navigating between pages.
+
+Vite (if used) for fast, modern build tools and hot reloading during development.
+
+State Management for handling API data and loading states.
+
+Functionality:
+
+Fetching Data: Axios is used to make HTTP requests to the backend API to fetch recipes.
+
+Displaying Data: Recipes are displayed in a list on the page.
+
+Error Handling: Errors from the backend API (e.g., network issues or missing data) are caught and displayed to the user.
+
+API Interaction:
+
+GET Request: Retrieves all recipes from the backend to display them on the homepage.
+
+POST, PUT, DELETE Requests : Allows users to add, edit, and delete recipes via form submissions.
+
+
+The frontend is built with React and uses Axios to fetch data from the backend API. Recipes are displayed in a list format, and users can interact with the application to view recipes. React Router is used for routing, and Vite is used for fast development builds. The app communicates with the backend API to get, add, edit, and delete recipes.
+
+Upcoming projects: 
+
+Creating a Login Page
+Adding Comments to other User's recipes
+Drink Pairings List

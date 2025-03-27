@@ -1,6 +1,7 @@
 import React from 'react'
 import creamyGarlicPasta from '../assets/creamyGarlicPasta.jpg'
-
+import RecipeItems from '../components/RecipeItems'
+import { Link } from "react-router-dom";
 
 
 function Home() {
@@ -9,9 +10,14 @@ function Home() {
     
       <section className='home'>
         <div className='left'>
-        <h1>Food Recipe</h1>
-        <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere hic, qui iusto repudiandae laboriosam, impedit autem optio mollitia recusandae eligendi consequatur commodi cum vitae! Voluptates repudiandae praesentium consequatur illum saepe.</h5>
-        <button>Share Your Recipe</button>
+          <h1>Hipster Recipes</h1>
+        <h2>Quick Enjoyable and Presentable Dishes!</h2> <br/>
+        <h4>Meals Made Simple...For Foodie Fanatics, by Foodie Fanatics
+        Hipster Recipes founded by Tatiana Emmanuel, is all about creating a
+        platform foodie creators to look and share their food options and ideas.</h4>
+        <button><Link to="/addrecipeform"  >
+                  Share Your Recipe
+                </Link></button>
         </div>
         <div className='right'>
             <img src= {creamyGarlicPasta} width="320px" height="300px"></img>
