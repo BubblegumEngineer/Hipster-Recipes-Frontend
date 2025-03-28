@@ -5,8 +5,9 @@ function Navbar() {
   return (
     <>
       <header>
-        <h1>Hipster Recipes</h1>
+      <h1>Hipster Recipes</h1>
         <ul>
+
           <li>
             <Link to="/">Home</Link>
           </li>
@@ -23,10 +24,16 @@ function Navbar() {
             <Link to="/addrecipeform">Share Your Recipe</Link>
           </li>
 
-          <li>Login</li>
           <li>
-            <Link to="/">Home</Link>
+          <Link to="/">Login</Link>
           </li>
+
+          <li>
+            <Link to="/">About</Link>
+          </li>
+
+          
+
         </ul>
       </header>
     </>
